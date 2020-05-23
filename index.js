@@ -35,9 +35,9 @@ client.on('message', (message) => {
   if(message.content == 'ping') {
     return message.reply('pong');
   }
-
+  
   if(message.content == 'embed') {
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
+    let img = 'https://cdn.discordapp.com/attachments/687878196536148024/713564078752137306/20200523_102848.png';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
       .setURL('http://www.naver.com')
@@ -68,7 +68,7 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setAuthor('나인팀 고객센터 / help', helpImg)
       .setColor('#186de6')
       .setFooter(`나인팀 고객센터`)
       .setTimestamp()
@@ -110,7 +110,7 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 나인팀 고객센터')
+        .setAuthor('나인팀 고객센터 / 공지')
         .setColor('#186de6')
         .setFooter(`나인팀 고객센터`)
         .setTimestamp()
