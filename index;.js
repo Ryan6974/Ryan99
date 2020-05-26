@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NzE0Nzg0MDgxNzM2NjMwMjky.XszsnA.-P6Aup6tWfSW7k0QKiwj-E0rC4k';
-const welcomeChannelName = "🥳ㅣ환영합니다";
-const byeChannelName = "🙁ㅣ안녕히가세요";
-const welcomeChannelComment = "어서오세요! 카키 디자인 입니다.";
+const token = process.env.token;
+const welcomeChannelName = "📥ㅣ환영합니다";
+const byeChannelName = "📤ㅣ안녕히가세요";
+const welcomeChannelComment = "어서오세요! 나인팀입니다.";
 const byeChannelComment = "안녕히가세요.. 돌아오길 바랄께요.";
 
 client.on('ready', () => {
@@ -18,7 +18,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == ""));
+  member.addRole(guild.roles.find(role => role.name == "인증회원"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -67,9 +67,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('카키 디자인 / help', helpImg)
+      .setAuthor('나인팀 고객센터 / help', helpImg)
       .setColor('#186de6')
-      .setFooter(`카키 디자인`)
+      .setFooter(`나인팀 고객센터`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -109,9 +109,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('카키 디자인 / 공지')
+        .setAuthor('나인팀 고객센터 / 공지')
         .setColor('#186de6')
-        .setFooter(`카키 디자인`)
+        .setFooter(`나인팀 고객센터`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
